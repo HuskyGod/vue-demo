@@ -5,14 +5,14 @@
         <!--<router-link to="/project/2" >2</router-link >-->
         <!--<router-link to="/project/3" >3</router-link >-->
         <ul>
-          <li @click="push('/project/1')" :class="this.$route.path === '/project/1' ? 'avite' : ''">页面1</li>
+          <li @click="push('/project/staffinfo')" :class="this.$route.path === '/project/staffinfo' ? 'avite' : ''">员工信息</li>
           <li @click="push('/project/2')" :class="this.$route.path === '/project/2' ? 'avite' : ''">页面2</li>
           <li @click="push('/project/3')" :class="this.$route.path === '/project/3' ? 'avite' : ''">页面3</li>
         </ul>
     </div>
     <div class="content">
       <div  class="handle"><span @click="push('/login')"><Icon  style="font-size: 16px;cursor:pointer" type="log-out" /></span></div>
-      <div style="padding: 50px;height: calc(100vh - 39px);overflow: auto;">
+      <div style="height: calc(100vh - 39px);overflow: auto;">
         <transition mode="out-in" name="project">
           <router-view></router-view>
         </transition>
@@ -39,7 +39,8 @@ export default {
       display: flex;
     }
     .content {
-      flex:1
+      flex:1;
+      box-shadow:inset 5px 5px 5px rgba(0,0,0,0.8);
     }
     .handle{
       background: rgba(57, 57, 57, 0.92);
@@ -62,7 +63,6 @@ export default {
       color: #adadad;
       font-size: 14px;
       height: 100vh;
-      box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
     }
     .left_nav > ul > li {
       padding: 20px;
@@ -76,5 +76,7 @@ export default {
     .left_nav > ul > li.avite{
       background: #242424;
       color: white;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
     }
 </style>
